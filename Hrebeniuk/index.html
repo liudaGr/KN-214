@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Qwigley|Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+
+    <title>SPARK</title>
+</head>
+<body>
+    <script src="main.js"></script>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                    <a class="header__logo">Spark</a>
+                <nav class="nav">
+                    <button class="button2" href="#" id="theme2">LIGHT THEME</button>
+                    <ul>
+                    <li><a class="nav__link" href="#">HOME</a></li>
+                    <li><a class="nav__link" href="#">GALLERY</a></li>
+                    <li><a class="nav__link" href="#">SHOP</a></li>
+                    <li class="dropdown"><a class="nav__link dropbtn" href="#">OCCASIONS</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#">Birthdays   </a></li>
+                            <li><a href="#">Special days</a></li>
+                            <li><a href="#">Huge events </a></li>
+                            <li><a href="#">Romantic    </a></li>
+                        </ul>    
+                    </li>
+                    <li><a class="nav__link" href="#">CONTACTS</a></li>
+                    </ul>
+                    <button class="button1" href="#" id="theme1">DARK THEME</button>
+                    
+                </nav>
+                <div class="burger">
+                    <li class="dropdown"><a class="nav__link dropbtn" href="#">MENU</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">GALLERY</a></li>
+                            <li><a href="#">SHOP</a></li>
+                            <li><a href="#">OCCASIONS </a></li>
+                            <li><a href="#">CONTACTS</a></li>
+                        </ul>    
+                    </li>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="intro">
+        <div class="container">
+            <h1 class="intro__title">SPARK</h1>
+            <h6 class="intro__text">Roses are red, violets are blue<br>
+                I can't rhyme, but I can buy flowers for you!</h6>
+            <button class="button" href="#" id="Choose">Choose<br>flowers</button>
+            <script>
+                var btn = document.querySelector('button');
+                var Choose = document.getElementById("Choose");
+                function ChooseFlwrs() {
+                    //Choose.style.border = "2px solid #53236f";
+                }
+                function NoChooseFlwrs() {
+                    Choose.style.border = "none";
+                }
+                btn.addEventListener('mouseover', ChooseFlwrs);
+                btn.addEventListener('mouseout', NoChooseFlwrs);
+            </script>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="features">
+            <div class="features__item">
+                <img src="img/Birthday.jpg" width="100%">
+            </div>
+            <div class="features__item">
+                <img src="img/Special.jpg" width="100%">
+            </div>
+            <div class="features__item">
+                <img src="img/Huge.jpg" width="100%">
+            </div>
+            <div class="features__item">
+                <img src="img/Romantic.jpg" width="100%">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__form">
+                    <p>Create account</p>
+
+                    <form name="form" action="" onsubmit ="return validate();" method="POST">
+                        <input type="text" name="Name" id="Name" placeholder="Enter full name"><br>
+                        <input type="email" name="Email" id="Email" placeholder="Enter email"><br>
+                        <input type="text" name="Phone" id="Phone" placeholder="Phone number"><br>
+                        <input type="date" name="Birthday" id="Birthday" placeholder="Birthday date"><br>
+                        <button name="Submit" id="Submit"> Sign up </button>
+                    </form>
+
+                    <script>
+                        function validate(){
+                            var Name = document.getElementById("Name");
+                            var Email = document.getElementById("Email");
+                            var Phone = document.getElementById("Phone");
+                            var Birthday = document.getElementById("Birthday");
+                            
+                            if(!Name.value) {
+                                Name.style.border = "2px solid red";
+                                alert ("Please, enter your name");
+                                return false;
+                            }
+                            if((Name.value<'97')&&(Name.value>'122')){
+                                valid = false;
+                            }
+                            else{
+                                valid = true;
+                            }
+                            if(valid == false){
+                                alert("Name must contain letters");
+                            }
+                            if(!Email.value) {
+                                Email.style.border = "2px solid red";
+                                alert ("Please, enter your email");
+                                return false;
+                            }
+                            if(!Phone.value) {
+                                Phone.style.border = "2px solid red";
+                                alert ("Please, enter your phone number");
+                                return false;
+                            }   
+                            if((Phone.value<'48')&&(Phone.value>'57')){
+                                valid = false;
+                            }
+                            else{
+                                valid = true;
+                            }
+                            if(valid == false){
+                                alert("Phone number must contain numbers");
+                            }
+                            if(!Birthday.value) {
+                                Birthday.style.border = "2px solid red";
+                                alert ("Please, enter your birthday date");
+                                return false;
+                            }                             
+                            return true;
+                        }
+                        var UserName = document.getElementById("Name");
+                        var UserEmail = document.getElementById("Email");
+                        var UserPhone = document.getElementById("Phone");
+                        var UserBirth = document.getElementById("Birthday");
+
+                        function SignUp1() {
+                            UserName.style.backgroundColor = "#c0ff8d";
+                        }
+                        UserName.addEventListener('click', SignUp1);
+                        
+                        function SignUp2() {
+                            UserEmail.style.backgroundColor = "#c0ff8d";
+                        }
+                        UserEmail.addEventListener('click', SignUp2);
+
+                        function SignUp3() {
+                            UserPhone.style.backgroundColor = "#c0ff8d";
+                        }
+                        UserPhone.addEventListener('click', SignUp3);
+
+                        function SignUp4() {
+                            UserBirth.style.backgroundColor = "#c0ff8d";
+                        }
+                        UserBirth.addEventListener('click', SignUp4);
+                    </script>
+                </div>
+                <div class="footer__info">
+                    <table  border="1" align="center">
+                        <tr>
+                         <td>Adress</td>
+                         <td>Taras Shevchenko str. 75, Lviv</td>
+                        </tr>
+                        <tr>
+                         <td>Phone number</td>
+                         <td>+380686544566</td>
+                       </tr>
+                       <tr>
+                        <td>Instagram</td>
+                        <td>@SparkLviv</td>
+                       </tr>
+                       <tr>
+                        <td>Email</td>
+                        <td>Spark2020@gmail.com</td>
+                       </tr>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let button1 = document.querySelector("#theme1");
+        let button2 = document.querySelector("#theme2");
+let light = true;
+
+let darkpalette = {
+    picture: "url('img/BackDark.jpg') center no-repeat",
+    header: "#3a021b",
+    headerText: "#b6a7c4",
+    logo: "#b6a7c4",
+    intro_text: "#b6a7c4",
+    intro_title: "#b6a7c4",
+    buttonColor: "#3a021b",
+    buttonText: "#b6a7c4",
+    dropdownColor: "#3a021b",
+    dropdownText: "#b6a7c4",
+}
+let lightpalette = {
+    picture: "url('img/Back.jpg') center no-repeat",
+    header: "#d0d2eb",
+    headerText: "#53236f",
+    logo: "#53236f",
+    intro_text: "#53236f",
+    intro_title: "#53236f",
+    buttonColor: "#d0d2eb",
+    buttonText: "#53236f",
+    dropdownColor: "#d0d2eb",
+    dropdownText: "#53236f"
+}
+
+function change(dark) {
+    let back = document.querySelector(".intro");
+    back.style.background = dark.picture;
+    let headerColor = document.querySelector(".header__inner");
+    headerColor.style.backgroundColor = dark.header;
+    let headerTextColor = document.querySelectorAll(".nav__link");
+    for(let i=0; i < headerTextColor.length; i++){
+        headerTextColor[i].style.color = dark.headerText;
+    }
+    let logoImg = document.querySelector(".header__logo");
+    logoImg.style.color = dark.logo;
+    let introText = document.querySelector(".intro__text");
+    introText.style.color = dark.intro_text;
+    let introTitle = document.querySelector(".intro__title");
+    introTitle.style.color = dark.intro_title;
+    let buttonClr = document.querySelector(".button");
+    buttonClr.style.backgroundColor = dark.buttonColor;
+    let buttonTextColor = document.querySelector(".button");
+    buttonTextColor.style.color = dark.buttonText;
+    let dropdownClr = document.querySelector(".dropdown-content");
+    dropdownClr.style.backgroundColor = dark.dropdownColor;
+    let dropdownTextColor = document.querySelector(".dropdown-content a");
+    for(let i=0; i < dropdownTextColor.length; i++){
+        dropdownTextColor[i].style.color = dark.dropdownText;
+    }
+}
+
+button1.addEventListener("click", function() {
+    change(darkpalette);
+    light = false;
+    button1.style.display = "none";
+    button2.style.display = "block";
+})
+
+button2.addEventListener("click", function() {
+    change(lightpalette);
+    light = true;
+    button1.style.display = "block";
+    button2.style.display = "none";
+})
+
+    </script>
+</body>
+</html>
